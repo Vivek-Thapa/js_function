@@ -6,6 +6,11 @@
 
 ```js
 // your code goes here
+function calculateDogAge(age) {
+  return age*7;
+}
+let newAge= calculaeDogAge();
+alert("your doggie is" + newAge + "years old in dog years!");
 ```
 2. 🎖Write a function named calculateSupply that:
   * [ ] takes 2 arguments: age, amount per day.
@@ -15,6 +20,9 @@
 
 ```js
 // your code goes here
+function calculateSupply (age,amtperDay) {
+  return
+}
 ```
 3. 🎖Create a function called celsiusToFahrenheit:
   * [ ] Store a celsius temperature into a variable.
@@ -25,6 +33,16 @@
 
 ```js
 // your code goes here
+function celsiusToFahrenheit(celsius) {
+  let cel = celsius
+  let temp = (celsius* 5/9) +32;
+  return `${cel} °C is ${temp} °F`;
+}
+function fahrenheitToCelsius(fahrenheit) {
+  let cel = fahrenheit
+  let temp = (fahrenheit-32*5/9);
+  return `${cel} °F is ${temp} °C`;
+}
 ```
 4. 🎖The function below returns true if the parameter age is greater than 18. Otherwise it asks for a confirmation and returns its result:
 
@@ -41,11 +59,17 @@ function checkAge(age) {
   4.1 🎖Convert the above function using ternary operator.
   ```js
   // your code goes here
+  function checkAge(age) {
+    return (age > 18) ? true : confirm('Did parents allow you?');
+  }
   ```
 
   4.2 🎖Convert the above function using `||` operator.
   ```js
   // your code goes here
+  function checkAge(age) {
+    return (age>18) || confirm('Did parents allow you');
+  }
   ```
 Will the function work differently if else is removed like below?
 
@@ -59,7 +83,7 @@ function checkAge(age) {
 }
 ```
 Is there any difference in the behavior of these two variants? If there is what is that?
-
+No, it remains same after removing the else statement also because the next condition get processed automaticaly.
 
 5. 🎖 Write a function pow(x,n) that returns x in power n.
 
@@ -68,6 +92,16 @@ Is there any difference in the behavior of these two variants? If there is what 
 
 ```js
 // Your code goes here
+let x=number(prompt("enter the value of x"));
+let n=Number(prompt("enter the value ofn"));
+function pow(x,n){
+  if (x>0){
+    let y =x**n;
+    alert (y);
+    return y;
+  }
+  return confirm("The number below 1 is not allowed");
+}
 
 // After writing code uncomment to check the answer.
 // pow(3, 2); // 9
@@ -79,22 +113,65 @@ Is there any difference in the behavior of these two variants? If there is what 
 
 ```js
 // your code goes here
+function sumAndMultiple(n,sign){
+  let tot=0;
+  prod=0;
+  if (sign="add"){
+    for (let i=1; i<=n; i++){
+      tot = tot+i;
+    }
+    alert(`${tot}`)
+    return tot;
+  } else if (sign="*") {
+    for (let i=1; i<=n; i++){
+      prod=prod*i
+    }
+    alert(`${prod}`)
+  retuen prod;
+  }
+  
+}
 ```
 6. 🎖Write a program that asks the user for a number n using prompt and prints the sum of the numbers 1 to n
 
 ```js
 // your code goes here
+let n=Number(prompt("enter yournumber to sum"));
+function numsum(n) {
+  let tot=0;
+  for (let i=1; i<=n; i++) {
+    tot = tot+i;
+  }
+  alert ("tot");
+  return tot;
+}
 ```
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 
 ```js
 // your code goes here
+function sumMultiple(n){
+  let tot=0;
+  for (let i=1; i<=n; i++) {
+    if (i%5==0 || i%7==0) {
+      tot = tot+i;
+    }
+  }
+  alert(`${tot}`)
+  return tot;
+}
 ```
 
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
 
 ```js
 // Your code here.
+function min(num1,num2) {
+  console.log(Math.min(0, 10));
+}
+function min(num1, num2) {
+  console.log(math.min(0, -10));
+}
 
 console.log(min(0, 10));
 // → 0
